@@ -1,0 +1,35 @@
+is_package: true
+container:
+  type: HtmlTemplate
+  properties: {html: '@theme:standard-page.html'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties: {slot: default}
+  components:
+  - type: TextBox
+    properties: {}
+    name: user
+    layout_properties: {grid_position: 'HPKREY,VOSCXD'}
+  - type: CheckBox
+    properties: {text: check_box_1}
+    name: check_box_1
+    layout_properties: {grid_position: 'HPKREY,FJAOYV'}
+  - type: TextBox
+    properties: {}
+    name: password
+    layout_properties: {grid_position: 'HPKREY,CHTQDC'}
+  - type: DropDown
+    properties: {}
+    name: drop_down_1
+    layout_properties: {grid_position: 'HPKREY,WEZDIT'}
+  - type: Button
+    properties: {text: button_1}
+    name: button_1
+    layout_properties: {grid_position: 'HPKREY,BBOQHD'}
+    event_bindings: {click: button_1_click}
+- type: FlowPanel
+  properties: {}
+  name: navbar_links
+  layout_properties: {slot: nav-right}

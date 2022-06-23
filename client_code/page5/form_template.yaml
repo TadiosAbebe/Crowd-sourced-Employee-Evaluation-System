@@ -1,0 +1,82 @@
+container:
+  type: ColumnPanel
+  properties: {col_widths: '{}'}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: GJLVBU,AHFHCA
+  components:
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: FVJPIP, title: User, data_key: user, $$hashKey: 'object:3281', expand: false,
+        width: 168}
+      - {id: WSULXY, title: Name, data_key: name, $$hashKey: 'object:3282'}
+      - {id: SYUHXG, title: '', data_key: '', $$hashKey: 'object:1932'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'RHJKSO,KBRDUJ', full_width_row: true}
+    components:
+    - type: DataRowPanel
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        auto_display_data: true, visible: true, item: null, font_size: null, font: '',
+        spacing_above: none, spacing_below: none, italic: false, background: '', bold: false,
+        underline: false}
+      name: data_row_panel_1
+      layout_properties: {pinned: true}
+      components:
+      - type: DropDown
+        properties:
+          role: null
+          align: full
+          tooltip: ''
+          placeholder: Select
+          border: ''
+          enabled: true
+          foreground: ''
+          items: []
+          visible: true
+          font_size: null
+          font: ''
+          spacing_above: small
+          spacing_below: small
+          italic: false
+          background: ''
+          bold: false
+          underline: false
+          include_placeholder: true
+        name: drop_down_1
+        layout_properties: {column: FVJPIP}
+      - type: TextBox
+        properties: {}
+        name: text_box_1
+        layout_properties: {column: WSULXY}
+      - type: Button
+        properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+          foreground: '', visible: true, text: Add, font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: button_1
+        layout_properties: {column: SYUHXG}
+        event_bindings: {click: button_1_click}
+    - type: RepeatingPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', items: null,
+        visible: true, spacing_above: none, spacing_below: none, item_template: page5.RowTemplate5,
+        background: ''}
+      name: client_list
+      layout_properties: {}
+is_package: true

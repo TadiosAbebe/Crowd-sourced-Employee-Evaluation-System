@@ -1,0 +1,164 @@
+container: {type: ColumnPanel}
+components:
+- type: ColumnPanel
+  properties: {col_widths: '{}'}
+  name: content_panel
+  layout_properties:
+    col_widths: {}
+    grid_position: NFELOK,TKGXHW
+  components:
+  - type: DataGrid
+    properties:
+      role: null
+      columns:
+      - {id: FVJPIP, title: User, data_key: user, $$hashKey: 'object:3281', expand: false,
+        width: 168}
+      - {id: WSULXY, title: Name, data_key: name, $$hashKey: 'object:3282'}
+      - {id: XTZKEM, title: Position, data_key: position, $$hashKey: 'object:3283'}
+      - {id: TXSVZH, title: Avatar, data_key: avatar, $$hashKey: 'object:3284', expand: false}
+      - {id: OPYMNO, title: Bio, data_key: bio, $$hashKey: 'object:3285'}
+      - {id: XFFROR, title: Department, data_key: department, $$hashKey: 'object:3286',
+        width: 145, expand: false}
+      - {id: SYUHXG, title: '', data_key: '', $$hashKey: 'object:1932'}
+      auto_header: true
+      tooltip: ''
+      border: ''
+      foreground: ''
+      rows_per_page: 20
+      visible: true
+      wrap_on: never
+      show_page_controls: true
+      spacing_above: small
+      spacing_below: small
+      background: ''
+    name: data_grid_1
+    layout_properties: {grid_position: 'RHJKSO,KBRDUJ', full_width_row: true}
+    components:
+    - type: DataRowPanel
+      properties: {role: null, align: left, tooltip: '', border: '', foreground: '',
+        auto_display_data: true, visible: true, item: null, font_size: null, font: '',
+        spacing_above: none, spacing_below: none, italic: false, background: '', bold: false,
+        underline: false}
+      name: data_row_panel_1
+      layout_properties: {pinned: true}
+      components:
+      - type: DropDown
+        properties:
+          role: null
+          align: full
+          tooltip: ''
+          placeholder: Select
+          border: ''
+          enabled: true
+          foreground: ''
+          items: []
+          visible: true
+          font_size: null
+          font: ''
+          spacing_above: small
+          spacing_below: small
+          italic: false
+          background: ''
+          bold: false
+          underline: false
+          include_placeholder: true
+        name: drop_down_1
+        layout_properties: {column: FVJPIP}
+      - type: TextBox
+        properties: {}
+        name: text_box_1
+        layout_properties: {column: WSULXY}
+      - type: TextBox
+        properties: {}
+        name: text_box_2
+        layout_properties: {column: XTZKEM}
+        event_bindings: {pressed_enter: text_box_2_pressed_enter}
+      - type: FileLoader
+        properties:
+          role: null
+          show_state: true
+          align: center
+          tooltip: ''
+          border: ''
+          file_types: null
+          enabled: true
+          files: []
+          foreground: ''
+          visible: true
+          text: ''
+          font_size: null
+          font: ''
+          spacing_above: small
+          icon_align: left
+          spacing_below: small
+          italic: false
+          file: null
+          background: ''
+          bold: false
+          underline: false
+          multiple: false
+          icon: fa:upload
+        name: file_loader_1
+        layout_properties: {column: TXSVZH}
+        event_bindings: {}
+      - type: TextBox
+        properties: {}
+        name: text_box_3
+        layout_properties: {column: OPYMNO}
+      - type: DropDown
+        properties:
+          role: null
+          align: full
+          tooltip: ''
+          placeholder: Select
+          border: ''
+          enabled: true
+          foreground: ''
+          items: []
+          visible: true
+          font_size: null
+          font: ''
+          spacing_above: small
+          spacing_below: small
+          italic: false
+          background: ''
+          bold: false
+          underline: false
+          include_placeholder: true
+        name: drop_down_2
+        layout_properties: {column: XFFROR}
+      - type: Button
+        properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+          foreground: '', visible: true, text: Add, font_size: null, font: '', spacing_above: small,
+          icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+          underline: false, icon: ''}
+        name: button_1
+        layout_properties: {column: SYUHXG}
+        event_bindings: {click: button_1_click}
+    - type: RepeatingPanel
+      properties: {role: null, tooltip: '', border: '', foreground: '', items: null,
+        visible: true, spacing_above: none, spacing_below: none, item_template: page1.RowTemplate1,
+        background: ''}
+      name: employees_list
+      layout_properties: {}
+  - type: TextBox
+    properties: {}
+    name: user
+    layout_properties: {grid_position: 'VSYAUM,VOKTTP'}
+  - type: TextBox
+    properties: {}
+    name: password
+    layout_properties: {grid_position: 'VSYAUM,SVVICX'}
+  - type: DropDown
+    properties: {}
+    name: drop_down_3
+    layout_properties: {grid_position: 'VSYAUM,JWASYT'}
+  - type: Button
+    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+      foreground: '', visible: true, text: create, font_size: null, font: '', spacing_above: small,
+      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+      underline: false, icon: ''}
+    name: create
+    layout_properties: {grid_position: 'VSYAUM,FLFHOC'}
+    event_bindings: {click: create_click}
+is_package: true

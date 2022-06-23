@@ -1,0 +1,13 @@
+container: {type: DataRowPanel}
+components:
+- type: Label
+  properties: {}
+  name: department_lbl
+  layout_properties: {column: VRJBOG}
+  data_bindings:
+  - {property: text, code: 'self.item[''department_name'']'}
+- type: RepeatingPanel
+  properties: {spacing_above: none, spacing_below: none, item_template: Employees_List.Dep_catagorized.Single_employee}
+  name: employee_list
+  layout_properties: {column: VRJBOG}
+is_package: true

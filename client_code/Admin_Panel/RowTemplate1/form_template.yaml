@@ -1,0 +1,95 @@
+container:
+  type: DataRowPanel
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: false,
+    visible: true, font_size: null, font: '', spacing_above: none, spacing_below: none,
+    italic: false, background: '', bold: false, underline: false}
+components:
+- type: DataRowPanel
+  properties: {}
+  name: read_view
+  layout_properties: {column: null}
+  components:
+  - type: DropDown
+    properties:
+      role: null
+      align: full
+      tooltip: ''
+      placeholder: ''
+      border: ''
+      enabled: false
+      foreground: ''
+      items: []
+      visible: true
+      font_size: null
+      font: ''
+      spacing_above: small
+      spacing_below: small
+      italic: false
+      background: ''
+      bold: false
+      underline: false
+      include_placeholder: false
+    name: drop_down_1
+    layout_properties: {column: FVJPIP}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''user'']', writeback: true}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1
+    layout_properties: {column: SYUHXG}
+    components:
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: 'fa:pencil'}
+      name: button_1
+      layout_properties: {}
+      event_bindings: {click: button_1_click}
+  - type: Label
+    properties: {}
+    name: label_1
+    layout_properties: {column: WSULXY}
+    data_bindings:
+    - {property: text, code: 'self.item[''name'']'}
+- type: DataRowPanel
+  properties: {role: null, align: left, tooltip: '', border: '', foreground: '', auto_display_data: true,
+    visible: false, item: null, font_size: null, font: '', spacing_above: none, spacing_below: none,
+    italic: false, background: '', bold: false, underline: false}
+  name: write_view
+  layout_properties: {column: null}
+  components:
+  - type: DropDown
+    properties: {}
+    name: drop_down_1_copy
+    layout_properties: {column: FVJPIP}
+    data_bindings:
+    - {property: selected_value, code: 'self.item[''user'']', writeback: true}
+  - type: TextBox
+    properties: {}
+    name: text_box_1_copy
+    layout_properties: {column: WSULXY}
+    data_bindings:
+    - {property: text, code: 'self.item[''name'']', writeback: true}
+  - type: FlowPanel
+    properties: {}
+    name: flow_panel_1_copy
+    layout_properties: {column: SYUHXG}
+    components:
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: 'fa:database'}
+      name: button_2
+      layout_properties: {}
+      event_bindings: {click: button_2_click}
+    - type: Button
+      properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
+        foreground: '', visible: true, text: '', font_size: null, font: '', spacing_above: small,
+        icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
+        underline: false, icon: 'fa:arrows-alt'}
+      name: button_3
+      layout_properties: {}
+      event_bindings: {click: button_3_click}
+is_package: true

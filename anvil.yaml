@@ -1,0 +1,139 @@
+dependencies: []
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+- source: /runtime/services/anvil/users.yml
+  client_config: {allow_signup: true, enable_automatically: true, use_email: true,
+    confirm_email: false}
+  server_config: {user_table: users}
+startup: {type: form, module: Index}
+package_name: Project1
+allow_embedding: false
+name: Clone of project good (2)
+runtime_options: {version: 2, client_version: '3', server_version: python3-full}
+startup_form: null
+db_schema:
+  roles:
+    title: Roles
+    client: full
+    server: full
+    columns:
+    - name: role
+      admin_ui: {width: 200}
+      type: string
+  department:
+    title: Department
+    client: full
+    server: full
+    columns:
+    - name: department_name
+      admin_ui: {width: 200}
+      type: string
+  employee:
+    title: Employee
+    client: full
+    server: full
+    columns:
+    - name: user
+      admin_ui: {width: 200}
+      type: link_single
+      target: users
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+    - name: position
+      admin_ui: {width: 200}
+      type: string
+    - name: avatar
+      admin_ui: {width: 200}
+      type: media
+    - name: bio
+      admin_ui: {width: 200}
+      type: string
+    - name: department
+      admin_ui: {width: 200}
+      type: link_single
+      target: department
+    - name: added
+      admin_ui: {width: 200}
+      type: datetime
+  ratings:
+    title: Ratings
+    client: none
+    server: full
+    columns:
+    - name: rater
+      admin_ui: {width: 200}
+      type: link_single
+      target: users
+    - name: rating
+      admin_ui: {width: 200}
+      type: number
+    - name: ratee
+      admin_ui: {width: 200}
+      type: link_single
+      target: employee
+  users:
+    title: Users
+    client: full
+    server: full
+    columns:
+    - name: email
+      admin_ui: {width: 200}
+      type: string
+    - name: enabled
+      admin_ui: {width: 200}
+      type: bool
+    - name: last_login
+      admin_ui: {width: 200}
+      type: datetime
+    - name: password_hash
+      admin_ui: {width: 200}
+      type: string
+    - name: n_password_failures
+      admin_ui: {width: 200}
+      type: number
+    - name: signed_up
+      admin_ui: {width: 200}
+      type: datetime
+    - name: email_confirmation_key
+      admin_ui: {width: 200}
+      type: string
+    - name: confirmed_email
+      admin_ui: {width: 200}
+      type: bool
+    - name: role
+      admin_ui: {width: 200}
+      type: link_single
+      target: roles
+  clients:
+    title: Clients
+    client: full
+    server: full
+    columns:
+    - name: user
+      admin_ui: {width: 200}
+      type: link_single
+      target: users
+    - name: name
+      admin_ui: {width: 200}
+      type: string
+    - name: added
+      admin_ui: {width: 200}
+      type: datetime
+  comment:
+    title: Comment
+    client: full
+    server: full
+    columns:
+    - name: Commenter
+      admin_ui: {width: 200}
+      type: string
+    - name: Comment
+      admin_ui: {width: 200}
+      type: string
+    - name: comment_to
+      admin_ui: {width: 200}
+      type: string
+renamed: true
